@@ -1,0 +1,20 @@
+import "./pseudoLinq";
+
+const testArray: Array<number> = [0,1,-1,-10,10];
+console.log(`test array = ${testArray}`);
+// const aggre1 = testArray.Aggregate((n, elem) => n+elem*elem);
+// console.log(`Aggregate((n, elem) => n+elem*elem) = ${aggre1}`);
+const aggre = testArray.Aggregate(2, (n, elem) => n+(elem*elem));
+console.log(`Aggregate1(2, (n, elem) => n+(elem*elem)) = ${aggre}`);
+const all = testArray.All(x=>x>0);
+console.log(`All(x=>x>0) = ${all}`);
+const any = testArray.Any(x=>x>0);
+console.log(`Any(x=>x>0) = ${any}`);
+const count = testArray.Count(x=>x>=0);
+console.log(`Count(x=>x>=0) = ${count}`);
+const first = testArray.FirstOrDefault(x=>Math.abs(x) > 5);
+console.log(`FirstOrDefault(x=>Math.abs(x) > 5) = ${first}`);
+const select = testArray.Select(x=>x*x);
+console.log(`Select(x=>x*x) = ${select}`);
+const where = testArray.Where(x=>x>0);
+console.log(`Where(x=>x>0) = ${where}`);
