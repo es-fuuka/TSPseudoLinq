@@ -73,10 +73,7 @@ Object.defineProperties(Array.prototype, {
         enumerable: false,
         writable: false,
         value: function (predicate) {
-            console.log(this);
             for (let item of this) {
-                console.log(item);
-                console.log(predicate(item));
                 if (predicate(item))
                     return item;
             }

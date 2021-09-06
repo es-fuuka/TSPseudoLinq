@@ -75,10 +75,7 @@ Object.defineProperties(Array.prototype, {
         enumerable: false,
         writable: false,
         value: function(this: Array<any>, predicate: (x: any) => boolean){
-            console.log(this);
             for (let item of this){
-                console.log(item);
-                console.log(predicate(item));
                 if (predicate(item))return item;
             };
 
